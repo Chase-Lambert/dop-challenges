@@ -83,7 +83,8 @@
   (get-in lib-data [:catalog :booksByIsbn (keyword example-isbn)]))
 
 (defn merge-and-serialize [api-data db-data]
-  (merge api-data db-data))
+  (json/write-str
+    (merge api-data db-data)))
 
 ;; (merge-and-serialize api-data-example lib-data-example)
 
